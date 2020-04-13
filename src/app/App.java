@@ -2,6 +2,7 @@ package app;
 
 import java.util.Scanner;
 import narytree.Narytree;
+import narytree.Person;
 
 
 /**
@@ -15,45 +16,45 @@ import narytree.Narytree;
  * @author: Emiro Moreno
 */
 
-
 public class App {
     public static void main(String[] args) throws Exception {
-        
         int opcion=0;
-        String id,nom;
+        String id, name, parentId;
         Narytree tree = new Narytree();       
         Scanner teclado = new Scanner(System.in);
         
- do {
+        do {
             opcion = menu();
 
             switch (opcion) {
-              
                 case '1':
+                    System.out.println("Ingrese la identificacion de la persona");
+                    id = teclado.nextLine();
+                    System.out.println("Ingrese el nombre de la persona");
+                    name = teclado.nextLine();
+
+                    System.out.println("Escriba el ID del padre, si no tiene escriba 0");
+                    parentId = teclado.nextLine();
+
+                    if (parentId == "0") {
+                        tree.insertNode(new Person(id, name));
+                    } else {
+                        tree.insertNode(new Person(id, name), parentId);
+                    }
+
+                    tree.displayTree(tree.getRoot().getChildren(), tree.getRoot().getInfo());
                     
- 
-                   
                     break;
 
                 case '2':
-                       
-                          
-
                     break;
 
                 case '3':
-                          System.out.println("Los archivos cargado son:");  
-                          System.out.println("1 " + tree.getRoot().getInfo().getName());
-                          tree.displayTree(tree.getRoot().getChildren(), tree.getRoot().getInfo());
-
-                   
-
+                    System.out.println("Los archivos cargado son:");  
+                    System.out.println("1 " + tree.getRoot().getInfo().getName());
+                    tree.displayTree(tree.getRoot().getChildren(), tree.getRoot().getInfo());
                     break;
-
-                
-               
             }
-
         } while (opcion != '6');
 
     }
@@ -64,9 +65,9 @@ public class App {
 
         do {
             System.out.println("\nMenu");
-            System.out.println("1. Insertar una nueva Persona");
-            System.out.println("2. Buscar una persona ");
-            System.out.println("3. Cargar datos desde un archivo");         
+            System.out.println("1. Insertar nueva persona");
+            System.out.println("2. Buscar una persona");
+            System.out.println("2. Mostrar árbol");
             System.out.println("4. Salir");
             
             Scanner teclado = new Scanner(System.in);
