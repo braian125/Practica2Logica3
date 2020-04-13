@@ -1,5 +1,12 @@
 package avl;
 
+/**
+ * clase NodolAVL
+ * 
+ * @author: Brian Vanegas
+ * @author: Emiro Moreno
+*/
+
 public class NodoAVL<T extends Comparable> extends NodoBinarioBusqueda {
     
     private int fB;
