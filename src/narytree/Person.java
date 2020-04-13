@@ -1,4 +1,10 @@
 package narytree;
+/**
+ * clase Person
+ * 
+ * @author: Brian Vanegas
+ * @author: Emiro Moreno
+*/
 
 public class Person {
     public String id;

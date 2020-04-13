@@ -1,11 +1,25 @@
 package narytree;
 
 import java.util.ArrayList;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+
+/**
+ * Descripcion de la Clase Narytree y sus metodos
+ * 
+ * la clase podra manipular un arbol Nario gracias a los siguientes metodos:
+ * getLevel dira el nivel que tiene el arbol,
+ * findparentNote el cual encontrara el nodo principaldel arbol,
+ * displayTree es simplemente mostrar, mostrara los dato, indicando cuales son los padre e hijos
+ * loadFile te leera el archito tipo txt donde guardamos los datos
+ * 
+ * 
+ * @author: Brian Vanegas
+ * @author: Emiro Moreno
+*/
+
 
 public class Narytree {
 
@@ -40,6 +54,19 @@ public class Narytree {
         }
         
         return node;
+    }
+
+    public void insertNode(Person person) {
+        this.getRoot().addChild(new Node(person));
+    }
+
+    public void insertNode(Person person, String parentId) {
+        Node parent = this.findParentNode(this.getRoot().getChildren(), parentId);
+        if (parent == null) {
+            insertNode(person);
+        } else {
+            parent.addChild(new Node(person));
+        }
     }
 
     public void displayTree(ArrayList<Node> children, Person parent) {
@@ -81,11 +108,15 @@ public class Narytree {
                         parent.addChild(new Node(new Person(id, name)));
                     }
                 }
+
+                System.out.println("Archivo cargado correctamente!!");
             }
         } catch (IOException e) {
             System.err.format("IOException: %s%n", e);
         }
 
-        System.out.println(sb);
+        //System.out.println(sb);
     }
+    
+  
 }

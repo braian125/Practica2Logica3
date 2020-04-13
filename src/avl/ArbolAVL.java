@@ -1,6 +1,11 @@
 package avl;
 
-import java.text.Normalizer;
+/**
+ * clase ArbolAVL
+ * 
+ * @author: Brian Vanegas
+ * @author: Emiro Moreno
+*/
 
 public class ArbolAVL {
     NodoAVL root;

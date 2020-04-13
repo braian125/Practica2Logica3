@@ -2,6 +2,13 @@ package narytree;
 
 import java.util.ArrayList;
 
+/**
+ * Clase Node
+ * 
+ * @author: Brian Vanegas
+ * @author: Emiro Moreno
+*/
+
 public class Node {
     private int sw;
     private Person info;
@@ -19,6 +26,7 @@ public class Node {
         this.info = info;
         children = new ArrayList<>();
     }
+
     
     /**
      * Devuelve 0 si el campo de info contiene un char

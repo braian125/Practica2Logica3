@@ -9,9 +9,11 @@ import avl.ArbolAVL;
 import avl.NodoAVL;
 
 /**
- *
- * @author Usuario
- */
+ * clase Diccionario
+ * 
+ * @author: Brian Vanegas
+ * @author: Emiro Moreno
+*/
 public class Diccionario extends ArbolAVL {
 
     private int cantidad;
