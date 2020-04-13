@@ -55,7 +55,7 @@ public class App {
                     tree.displayTree(tree.getRoot().getChildren(), tree.getRoot().getInfo());
                     break;
             }
-        } while (opcion != '6');
+        } while (opcion != '4');
 
     }
 
@@ -67,7 +67,7 @@ public class App {
             System.out.println("\nMenu");
             System.out.println("1. Insertar nueva persona");
             System.out.println("2. Buscar una persona");
-            System.out.println("2. Mostrar árbol");
+            System.out.println("3. Mostrar árbol");
             System.out.println("4. Salir");
             
             Scanner teclado = new Scanner(System.in);
